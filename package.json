@@ -1,0 +1,19 @@
+{
+  "name": "orchestra",
+  "version": "1.0.0",
+  "description": "labo de RES Orchestra",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mercierjo/Teaching-HEIGVD-RES-2019-Labo-Orchestra.git"
+  },
+  "author": "Jordan Mercier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mercierjo/Teaching-HEIGVD-RES-2019-Labo-Orchestra/issues"
+  },
+  "homepage": "https://github.com/mercierjo/Teaching-HEIGVD-RES-2019-Labo-Orchestra#readme"
+}
