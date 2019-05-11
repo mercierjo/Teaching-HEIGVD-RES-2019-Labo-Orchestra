@@ -5,7 +5,7 @@ var musicianMap = new Map();
 
 const s = dgram.createSocket('udp4');
 s.bind(2206, function() {
-    s.addMembership("229.255.255.10");
+    s.addMembership("239.255.255.10");
 });
 
 s.on('message', function(msg, source) {
@@ -16,14 +16,14 @@ s.on('message', function(msg, source) {
         instrument: infos.instrument,
         activeSince: now,
     }
+
+    console.log("Musician: " + JSON.stringify(musician));
     musicianMap.set(infos.uuid, musician);
 });
 
 function controlMusician() {
-    var now = moment().format();
-
     musicianMap.forEach(function(musician, uuid) {
-        if(now == moment(musician.activeSince).add(5,'s')) {
+        if(moment(Date.now()) > moment(musician.activeSince).add(5,'s')) {
             musicianMap.delete(uuid);
         }
     });
@@ -31,15 +31,15 @@ function controlMusician() {
 
 setInterval(controlMusician, 500);
 
-var serverTcp = net.createServer(function(socket) {
+var serverTcp = net.createServer();
+serverTcp.on('connection', function(socket){
     var musicians = new Array();
     musicianMap.forEach(function(musician, uuid) {
-        musicians.add(musician);
+        musicians.push(musician);
     });
 
     socket.write(JSON.stringify(musicians));
-    socket.pipe(socket);
-});
+    socket.end();
+})
 
-serverTcp.listen(2205,'127.0.0.1');
-serverTcp.close();
+serverTcp.listen(2205);
