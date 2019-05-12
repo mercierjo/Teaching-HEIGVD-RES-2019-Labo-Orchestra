@@ -143,15 +143,15 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | --- |
 |Question | How do we **define and build our own Docker image**?|
-| | *Enter your response here...*  |
+| | By creating a Dockerfile and build it with the command `docker build .`  |
 |Question | How can we use the `ENTRYPOINT` statement in our Dockerfile?  |
 | | *Enter your response here...*  |
 |Question | After building our Docker image, how do we use it to **run containers**?  |
-| | *Enter your response here...*  |
+| | `docker run **image**`  |
 |Question | How do we get the list of all **running containers**?  |
-| | *Enter your response here...*  |
+| | `docker ps`  |
 |Question | How do we **stop/kill** one running container?  |
-| | *Enter your response here...*  |
+| | `docker start/stop **<name>**  |
 |Question | How can we check that our running containers are effectively sending UDP datagrams?  |
 | | *Enter your response here...*  |
 
@@ -167,7 +167,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | How can we use the `Moment.js` npm module to help us with **date manipulations** and formatting?  |
 | | `moment().format();     // 2013-02-04T10:35:24-08:00` with the function add substract |
 |Question | When and how do we **get rid of inactive players**?  |
-| | *Enter your response here...* |
+| | We need to delete them when there is more than 5 seconds of inactivity. |
 |Question | How do I implement a **simple TCP server** in Node.js?  |
 | | *Enter your response here...* |
 
@@ -177,7 +177,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | --- |
 |Question | How do we validate that the whole system works, once we have built our Docker image? |
-| | *Enter your response here...* |
+| | With the script `./validate.sh` |
 
 
 ## Constraints
